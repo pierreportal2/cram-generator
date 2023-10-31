@@ -1,56 +1,175 @@
 <style>
-    /* Basic table styles */
+
+/* Title */
+h2 {
+    font-size: 3em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Top Select + Text */
+#top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#top-container label,
+#top-container select {
+    font-size: 1.2em;
+}
+
+/* Fieldset */
+fieldset {
+    background-color: #f9f9f9;
+    border: 2px solid #e1e1e1;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Legend */
+legend {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Input Text and Select Dropdown */
+input[type="text"],input[type="tel"],
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+#monthPicker {
+    margin-bottom: 0;
+}
+
+
+/* Buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: transparent;
+    color: #4CAF50;
+}
+
+        #titletext{
+            font-size: 33px;
+    font-family: sans-serif;
+    font-weight: bold;
+        }
+
+
+    @media (max-width: 1165px) {
+        .name-days-header{
+            display: none;
+        }
+        input[type="number"]{
+            /* font-size: 8.7px; */
+        }
+    }
+
+    /* #titreMoisAnnees {
+        
+    left: 38px;
+    position: absolute;
+
+    } */
+
+    #selectButton{
+        margin-bottom: 5px;
+        margin-top: 5pw;
+        font-family: monospace;
+        font-size: 11.7px
+    }
+
+    #cram-body {
+        font-family: sans-serif;
+        min-width: 904px;
+        margin-top: 30px;
+    }
 
     input[type="number"] {
-  -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
-}
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none;
-}
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+        /* font-size: 11.7px; */
+    }
 
-    .time-input{
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+    .time-input {
         padding: 0;
     }
 
+    input {
+        font-family: monospace;
+    }
+
     table {
-        width: 100%; 
+        font-family: monospace;
+        font-style: monospace;
+        width: 100%;
         border-collapse: collapse;
         font-size: 0.9em;
-        margin-top: 20px;
     }
-    
-    th, td {
+
+    th,
+    td {
         /* border: 1px solid #d3d3d3; */
         text-align: center;
-        transition: all 0.3s;  /* smooth hover effect */
+        transition: all 0.3s;
+        /* smooth hover effect */
     }
-    
+
     .second-col {
-        min-width: 55px
+        min-width: 42px
     }
-    
-    
+
+
     /* Hover effect for table rows */
     tr:hover {
         background-color: #f5f5f5;
     }
-    
+
     /* Header styles */
     th {
-        background-color: #f2f2f2; 
+        background-color: #f2f2f2;
         color: #333;
     }
-    
+
+    th.first-col, th.second-col {
+        background-color: transparent;
+    }
+
     /* For vertical text */
     .vertical-text {
         transform: rotate(270deg);
         white-space: nowrap;
         display: inline-block;
     }
-    
+
     .bold-cell {
         font-weight: bold;
     }
@@ -58,61 +177,70 @@ input[type=number]::-webkit-outer-spin-button {
     /* .green-cell {
         color: green;
     } */
-    
+
     .green-bold {
-        background-color: #4CAF50; /* Adjusted to a shade of green that's pleasing to the eye */
-        color: white; 
+        background-color: #4CAF50;
+        /* Adjusted to a shade of green that's pleasing to the eye */
+        color: white;
         font-weight: bold;
     }
-    
+
     .full-width-input {
         width: 100%;
         height: 100%;
         border: none;
-        padding: 0!important;
-        color: black!important;
+        padding: 0 !important;
+        color: black !important;
         margin: 0;
         box-sizing: border-box;
-        background-color: #f9f9f9; /* Light grey to differentiate input fields */
-        text-align: center; /* Centering text in input fields */
+        background-color: #f9f9f9;
+        /* Light grey to differentiate input fields */
+        text-align: center;
+        /* Centering text in input fields */
     }
-    
+
     .grayed-out {
         background-color: #d3d3d3;
     }
-    
+
+    .ferie-td {
+        background-color: pink;
+    }
+
     .input-td {
         padding: 0;
         /* padding-left: 5px; */
     }
-    
+
     #infos {
         display: flex;
-        justify-content: space-between;
-        gap: 20px;
+        justify-content: space-evenly;
     }
-    
+
     fieldset {
-        flex: 1;
+        /* flex: 1; */
         padding: 15px;
         border-radius: 5px;
         border: 1px solid #d3d3d3;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adding a soft shadow for depth */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        /* Adding a soft shadow for depth */
     }
-    
+
     tr.border-bottom td {
         /* border-bottom: 1px solid black; */
     }
-    
-    
-    
+
+    .first-col{    max-width: 176px;}
+
+
+
     /* .table-wrapper {
         position: relative;
         overflow: auto;
         border: 1px solid black;
         white-space: nowrap;
     } */
-    
+
     /* 
     .sticky-col {
       position: sticky;
@@ -133,577 +261,701 @@ input[type=number]::-webkit-outer-spin-button {
       max-width: 150px;
       left: 334px;    
     } */
-    
+
     /* .table-wrapper {
       width: 100%;
       height: 150px;
       overflow: auto;
     } */
-    
+
     .border-none {
         border: none;
     }
-    
+
     table {
-      width: 100%;
-      text-align: center;
-      border-collapse: separate; /* Don't collapse */
-      border-spacing: 0;
+        width: 100%;
+        text-align: center;
+        border-collapse: separate;
+        /* Don't collapse */
+        border-spacing: 0;
     }
-    
+
     table th {
-      /* Apply both top and bottom borders to the <th> */
-      /* border-top: 2px solid;
+        /* Apply both top and bottom borders to the <th> */
+        /* border-top: 2px solid;
       border-bottom: 2px solid;
       border-right: 2px solid; */
     }
-    
+
     table td {
-      /* For cells, apply the border to one of each side only (right but not left, bottom but not top) */
-      /* border-bottom: 2px solid;
+        /* For cells, apply the border to one of each side only (right but not left, bottom but not top) */
+        /* border-bottom: 2px solid;
       border-right: 2px solid; */
     }
-    
+
     table th:first-child,
     table td:first-child {
-      /* Apply a left border on the first <td> or <th> in a row */
-      /* border-left: 2px solid; */
+        /* Apply a left border on the first <td> or <th> in a row */
+        /* border-left: 2px solid; */
     }
-    
+
     /* table thead th {
       position: sticky;
       top: 0;
       background-color: #edecec;
     } */
-    
-        </style>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script>
-            function generateDaysColumn(year, month) {
-                // Noms de jours en français
-                const dayNames = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
-    
-                // Déterminer le nombre de jours dans le mois
-                let daysInMonth = new Date(year, month, 0).getDate();
-    
-                // Créer un fragment pour stocker les colonnes des jours
-                let fragment = document.createDocumentFragment();
-                let fragmentNames = document.createDocumentFragment();
-    
-                // Générer chaque colonne de jour
-                for (let i = 1; i <= daysInMonth; i++) {
-                    let th = document.createElement("th");
-                    th.textContent = String(i).padStart(2, '0'); // format "01", "02", etc.
-    
-                    let dayName = dayNames[new Date(year, month - 1, i).getDay()]; // Obtenir le nom du jour
-                    let thName = document.createElement("th");
-                    thName.textContent = dayName;
-    
-                    //Vérifiez si le jour est un samedi ou un dimanche
-                    if (dayName === 'Sam' || dayName === 'Dim') {
-                        th.classList.add('grayed-out');
-                        thName.classList.add('grayed-out');
-                    }
-    
-                    fragment.appendChild(th);
-                    fragmentNames.appendChild(thName);
-                }
-    
-                return { days: fragment, names: fragmentNames };
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+    const allOptions = [
+        "CONGES PAYES",
+        "CONGES SANS SOLDE",
+        "CONGES EXCEPTIONNELS",
+        "FERIE",
+        "RTT SALARIE",
+        "RTT EMPLOYEUR",
+        "FORMATION",
+        "MALADIE"
+    ];
+    let selectedOptions = [];
+
+    function resetList(hFeries = false) {
+
+if (hFeries){
+    selectedOptions.push("FERIE")   
+}
+
+if (selectedOptions.length == 0) {
+    return true
+}
+
+// Clear the selectedOptions array
+selectedOptions.length = 0;
+
+if (hFeries){
+    selectedOptions.push("FERIE")   
+}
+
+// Restore the initial dropdown in the first row
+const firstTd = document.querySelector('.select-td');
+console.log(hFeries)
+if (!hFeries) {
+    firstTd.innerHTML = `
+            <select id="selectButton" class="selectButton">
+                <option value="">Ajouter jour non facturable</option>
+                <option value="CONGES PAYES">CONGES PAYES</option>
+                <option value="CONGES SANS SOLDE">CONGES SANS SOLDE</option>
+                <option value="CONGES EXCEPTIONNELS">CONGES EXCEPTIONNELS</option>
+                <option value="FERIE">FERIE</option>
+                <option value="RTT SALARIE">RTT SALARIE</option>
+                <option value="RTT EMPLOYEUR">RTT EMPLOYEUR</option>
+                <option value="FORMATION">FORMATION</option>
+                <option value="MALADIE">MALADIE</option>
+            </select>
+        `;
+} else {
+    firstTd.innerHTML = `
+            <select id="selectButton" class="selectButton">
+                <option value="">Ajouter jour non facturable</option>
+                <option value="CONGES PAYES">CONGES PAYES</option>
+                <option value="CONGES SANS SOLDE">CONGES SANS SOLDE</option>
+                <option value="CONGES EXCEPTIONNELS">CONGES EXCEPTIONNELS</option>
+                <option value="RTT SALARIE">RTT SALARIE</option>
+                <option value="RTT EMPLOYEUR">RTT EMPLOYEUR</option>
+                <option value="FORMATION">FORMATION</option>
+                <option value="MALADIE">MALADIE</option>
+            </select>
+        `;
+}
+
+// h.forEach(holiday => {      
+//     monthPicker.
+// })
+}
+
+
+    function joursFeries(year) {
+        let easterDate = getEasterDate(year);
+
+        let holidays = [
+            new Date(year, 0, 1),  // Jour de l'an
+            new Date(year, 4, 1),  // Fête du travail
+            new Date(year, 4, 8),  // Victoire des alliés
+            new Date(year, 6, 14), // Fête nationale
+            new Date(year, 7, 15), // Assomption
+            new Date(year, 10, 1), // Toussaint
+            new Date(year, 10, 11),// Armistice
+            new Date(year, 11, 25) // Noël
+        ];
+
+        holidays.push(
+            new Date(easterDate.getFullYear(), easterDate.getMonth(), easterDate.getDate() + 1), // Lundi de Pâques
+            new Date(easterDate.getFullYear(), easterDate.getMonth(), easterDate.getDate() + 39), // Ascension
+            new Date(easterDate.getFullYear(), easterDate.getMonth(), easterDate.getDate() + 50)  // Lundi de Pentecôte
+        );
+
+        return holidays;
+    }
+
+    function getEasterDate(year) {
+        let f = Math.floor(year / 100);
+        let g = year % 19;
+        let h = (f - Math.floor(f / 4) - Math.floor((8 * f + 13) / 25) + 19 * g + 15) % 30;
+        let i = h - Math.floor(h / 28) * (1 - Math.floor(29 / (h + 1)) * Math.floor((21 - g) / 11));
+        let j = (year + Math.floor(year / 4) + i + 2 - f + Math.floor(f / 4)) % 7;
+        let l = i - j;
+        let month = 3 + Math.floor((l + 40) / 44);
+        let day = l + 28 - 31 * Math.floor(month / 4);
+
+        return new Date(year, month - 1, day);
+    }
+
+    function holidaysInMonth(year, month) {
+        let holidays = joursFeries(year).filter(date => date.getMonth() === month - 1);
+
+        return holidays.length ? holidays : false;
+    }
+
+    function generateDaysColumn(year, month) {
+        // Noms de jours en français
+        const dayNames = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+
+        // Déterminer le nombre de jours dans le mois
+        let daysInMonth = new Date(year, month, 0).getDate();
+
+        // Créer un fragment pour stocker les colonnes des jours
+        let fragment = document.createDocumentFragment();
+        let fragmentNames = document.createDocumentFragment();
+
+        // Générer chaque colonne de jour
+        for (let i = 1; i <= daysInMonth; i++) {
+            let th = document.createElement("th");
+            th.textContent = String(i).padStart(2, '0'); // format "01", "02", etc.
+
+            let dayName = dayNames[new Date(year, month - 1, i).getDay()]; // Obtenir le nom du jour
+            let thName = document.createElement("th");
+            thName.textContent = dayName;
+
+            //Vérifiez si le jour est un samedi ou un dimanche
+            if (dayName === 'Sam' || dayName === 'Dim') {
+                th.classList.add('grayed-out');
+                thName.classList.add('grayed-out');
             }
-    
-            function generateCellsForDays(definedRows = false) {
-                const table = document.getElementById('activityTable');
-                const daysInMonth = table.querySelectorAll('.days-header th').length - 2; // -2 pour exclure les cellules vides
-    
-                let rows = table.querySelectorAll('tr');
-    
-                if (definedRows) {
-                    rows = definedRows
-                }
-    
-                console.log(rows)
-    
-                for (let row of rows) {
-                    if (row.children[0].textContent.length > 0) {
-                        if (!row.children[0].classList.contains("select-td") && row.children[0].textContent !== 'FACTURABLE / ACTIVITE NORMALE' && row.children[0].textContent !== 'NON FACTURABLE') {
-                            // Si c'est une ligne qui doit avoir des cellules pour chaque jour du mois
-                            if (row.children[0].textContent === 'TTL FACTURABLES' || row.children[0].textContent === 'TTL NON FACTURABLES') {
+
+            fragment.appendChild(th);
+            fragmentNames.appendChild(thName);
+        }
+
+        return { days: fragment, names: fragmentNames };
+    }
+
+    function generateCellsForDays(definedRows = false) {
+        const table = document.getElementById('activityTable');
+        const daysInMonth = table.querySelectorAll('.days-header th').length - 2; // -2 pour exclure les cellules vides
+
+        let rows = table.querySelectorAll('tr');
+
+        if (definedRows) {
+            rows = definedRows
+        }
+
+        console.log(rows)
+
+        for (let row of rows) {
+            if (row.children[0].textContent.length > 0) {
+                if (!row.children[0].classList.contains("select-td") && row.children[0].textContent !== 'FACTURABLE / ACTIVITE NORMALE' && row.children[0].textContent !== 'NON FACTURABLE') {
+                    // Si c'est une ligne qui doit avoir des cellules pour chaque jour du mois
+                    if (row.children[0].textContent === 'TTL FACTURABLES' || row.children[0].textContent === 'TTL NON FACTURABLES') {
+                        const cell = document.createElement('td');
+                        cell.classList.add("sticky-col")
+                        cell.classList.add("second-col")
+                        cell.classList.add("bold-cell")
+                        var text = document.createTextNode("0");
+                        if (row.children[0].textContent === 'TTL FACTURABLES') {
+                            cell.classList.add("green-cell")
+                        }
+                        cell.appendChild(text);
+                        row.appendChild(cell);
+                    } else {
+                        for (let i = 0; i < daysInMonth + 1; i++) {
+                            if (i < 1) {
                                 const cell = document.createElement('td');
+                                var text = document.createTextNode("0");
                                 cell.classList.add("sticky-col")
                                 cell.classList.add("second-col")
-                                cell.classList.add("bold-cell")
-                                var text = document.createTextNode("0");
-                                if (row.children[0].textContent === 'TTL FACTURABLES'){
-                                    cell.classList.add("green-cell")
-                                }
                                 cell.appendChild(text);
                                 row.appendChild(cell);
                             } else {
-                                for (let i = 0; i < daysInMonth + 1; i++) {
-                                    if (i < 1) {
-                                        const cell = document.createElement('td');
-                                        var text = document.createTextNode("0");
-                                        cell.classList.add("sticky-col")
-                                        cell.classList.add("second-col")
-                                        cell.appendChild(text);
-                                        row.appendChild(cell);
-                                    } else {
-                                        const cell = document.createElement('td');
-                                        cell.classList.add('input-td')
-                                        const input = document.createElement('input');
-                                        input.classList.add('full-width-input')
-                                        input.type = "number";
-                                        input.step = "0.5"
-                                        input.value = "0"
-                                        input.style.width = "100%";
-                                        input.style.border = "none";
-                                        input.style.outline = "none";
-                                        input.style.backgroundColor = "transparent";
-                                        cell.appendChild(input);
-                                        row.appendChild(cell);
-                                    }
-                                }
+                                const cell = document.createElement('td');
+                                cell.classList.add('input-td')
+                                const input = document.createElement('input');
+                                input.classList.add('full-width-input')
+                                input.setAttribute('onclick','this.select()')
+                                input.type = "number";
+                                input.step = "0.5"
+                                input.value = "0"
+                                input.min = 0
+                                input.max = 24
+                                input.style.width = "100%";
+                                input.style.border = "none";
+                                input.style.outline = "none";
+                                input.style.backgroundColor = "transparent";
+                                cell.appendChild(input);
+                                row.appendChild(cell);
                             }
                         }
-    
                     }
                 }
-    
-                // graying out ...
-                let headers = table.querySelectorAll('tr:first-child th');
-    
-                headers.forEach((header, index) => {
-                    // Si le texte de la colonne est "Dim" ou "Sam", grisez toute la colonne
-                    if (header.textContent.trim() === 'Dim' || header.textContent.trim() === 'Sam') {
-                        let cells = table.querySelectorAll(`tr td:nth-child(${index + 1})`);
-                        cells.forEach(cell => {
-                            let input = cell.querySelector('input')
-                            cell.classList.add('grayed-out');
-                            input.classList.add('grayed-out');
-                        });
-                    }
+
+            }
+        }
+
+        // graying out ...
+        let headers = table.querySelectorAll('tr:first-child th');
+
+        headers.forEach((header, index) => {
+            // Si le texte de la colonne est "Dim" ou "Sam", grisez toute la colonne
+            if (header.textContent.trim() === 'Dim' || header.textContent.trim() === 'Sam') {
+                let cells = table.querySelectorAll(`tr td:nth-child(${index + 1})`);
+                cells.forEach(cell => {
+                    let input = cell.querySelector('input')
+                    cell.classList.add('grayed-out');
+                    input.classList.add('grayed-out');
                 });
             }
-    
-            function initDefaultTemplate() {
-                // Select all input elements within td within tr
-                let inputs = document.querySelectorAll('#jat td input');
-    
-                // Loop through the NodeList and set their values to "8"
+        });
+    }
+
+    function initDefaultTemplate() {
+        // Select all input elements within td within tr
+        let inputs = document.querySelectorAll('#jat td input');
+
+        // Loop through the NodeList and set their values to "8"
+        inputs.forEach(input => {
+            if (!input.classList.contains('grayed-out')) {
+                input.value = "8";
+                let parentTd = input.closest('td');
+                parentTd.classList.add('green-bold');
+            }
+        });
+        inputs[0].dispatchEvent(new Event('input', { 'bubbles': true }))
+    }
+
+    function setTableForMonthYear(year, month) {
+        let tds = document.querySelectorAll('td:not(.base-cell)');
+        tds.forEach(td => {
+            td.parentNode.removeChild(td);
+        });
+        let ths = document.querySelectorAll('th:not(.base-cell)');
+        ths.forEach(th => {
+            th.parentNode.removeChild(th);
+        });
+        let trs = document.querySelectorAll('.ephemeral-tr');
+        trs.forEach(tr => {
+            tr.parentNode.removeChild(tr);
+        });
+        let columns = generateDaysColumn(year, month);
+        // Supposons que votre tableau ait un thead avec une classe 'days-header' pour les dates et 'name-days-header' pour les noms des jours
+        let daysHeader = document.querySelector('.days-header');
+        let nameDaysHeader = document.querySelector('.name-days-header');
+        daysHeader.appendChild(columns.days);
+        nameDaysHeader.appendChild(columns.names);
+
+        generateCellsForDays()
+
+        h = holidaysInMonth(year, month)
+        if (h){
+
+            let currentTr = document.querySelector('#activityTable tbody tr:nth-child(1)')
+            let table = document.getElementById('activityTable');
+            let tbody = table.tBodies[0]; // This gets the first tbody of the table. If the table doesn't already have a tbody, you'll need to create one.
+
+            let tr1 = document.createElement('tr');
+            tr1.classList.add("ephemeral-tr")
+
+            let td1 = document.createElement('td');
+            td1.classList.add("sticky-col")
+            td1.classList.add("first-col")
+            td1.textContent = 'FERIE';
+            tr1.appendChild(td1);
+
+            //     console.log(tr1)
+            //     console.log(td1)
+
+                let position = 2 // For example, insert before the third row
+                if (tbody.children.length >= position) {
+                    tbody.insertBefore(tr1, tbody.children[position - 1]);
+                } else {
+                    // If there are fewer than the desired position number of rows, just append the new row at the end
+                    tbody.appendChild(tr1);
+                }
+            
+            generateCellsForDays([tr1]) 
+            
+            h.forEach(holiday => {
+                dayOfMonth = holiday.getDate()
+                console.log(dayOfMonth)
+                let nthIndex = dayOfMonth + 2
+                let hTd = tr1.querySelector('td:nth-child(' + nthIndex + ')')
+                let hInput = hTd.querySelector('input')
+                hTd.classList.add("ferie-td")
+                hInput.value = 8
+                hInput.dispatchEvent(new Event('input', { 'bubbles': true }))
+            })
+        }
+
+        resetList(hFeries=h)
+
+    }
+
+
+    // Exemple d'utilisation:
+    window.onload = function () {
+
+        const table = document.getElementById('activityTable');
+
+        let date = new Date();
+        let monthPicker = document.getElementById('monthPicker');
+
+        // Store the current month and year for later comparison
+        let currentMonth = date.getMonth();
+        let currentYear = date.getFullYear();
+
+        // Shift the date to the previous month
+        date.setMonth(date.getMonth() - 1);
+
+        // Get month names. This could also be customized based on your needs.
+        let monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        for (let i = 0; i < 12; i++) {
+            let month = date.getMonth();
+            let year = date.getFullYear();
+
+            // Create a new option element
+            let option = document.createElement('option');
+            option.value = `${year}-${String(month + 1).padStart(2, '0')}`; // Format: YYYY-MM
+            option.textContent = `${monthNames[month]} ${year}`; // Display: MonthName Year
+
+            // Check if this option matches the current month and year
+            if (month === currentMonth && year === currentYear) {
+                option.selected = true;
+            }
+
+            // Append the option to the monthPicker select element
+            monthPicker.appendChild(option);
+
+            // Move to the next month
+            date.setMonth(date.getMonth() + 1);
+        }
+
+        // Pour générer les colonnes pour octobre 2023
+        //setTableForMonthYear(year, month);
+
+        // Attach a change event listener
+        monthPicker.addEventListener('change', function () {
+            console.log("Selected month:", monthPicker.value);
+            // document.querySelector("#titreMoisAnnees").textContent = "Activité " + monthPicker.value
+            let split = monthPicker.value.split("-")
+            
+            // h = holidaysInMonth(split[0], split[1])
+            // if(h){
+            //     let currentTr = document.querySelector('#activityTable tbody tr:nth-child(1)')
+            //     let table = document.getElementById('activityTable');
+            //     let tbody = table.tBodies[0]; // This gets the first tbody of the table. If the table doesn't already have a tbody, you'll need to create one.
+
+            //     let tr1 = document.createElement('tr');
+            //     tr1.classList.add("ephemeral-tr")
+
+            //     let td1 = document.createElement('td');
+            //     td1.classList.add("sticky-col")
+            //     td1.classList.add("first-col")
+            //     td1.textContent = 'FERIE';
+            //     tr1.appendChild(td1);
+
+            //     console.log(tr1)
+            //     console.log(td1)
+
+            //     let position = 2 // For example, insert before the third row
+            //     if (tbody.children.length >= position) {
+            //         tbody.insertBefore(tr1, tbody.children[position - 1]);
+            //     } else {
+            //         // If there are fewer than the desired position number of rows, just append the new row at the end
+            //         tbody.appendChild(tr1);
+            //     }
+            // }
+
+            setTableForMonthYear(split[0], split[1]);
+            let titletext = document.getElementById("titletext")
+            titletext.innerText = "Compte rendu d'activité - " + monthPicker.value
+
+            // if (h) {
+            //     resetList(hFeries = h)
+            // } else {
+            //     resetList()
+            // }
+            
+
+            // Add your custom code here
+            // For example:
+            // if(monthPicker.value === '2023-10') {
+            //     console.log('October 2023 was selected!');
+            // }
+        });
+
+        // initDefaultTemplate()
+
+        document.getElementById('activityTable').addEventListener('input', function (e) {
+            if (e.target && e.target.tagName == 'INPUT') {
+                // Get the parent <tr> of the <input>
+
+                let value = parseFloat(e.target.value);
+                let parentTd = e.target.closest('td');
+
+                if (value > 0) {
+                    parentTd.classList.add('green-bold');
+                } else {
+                    parentTd.classList.remove('green-bold');
+                }
+
+                let parentTr = e.target.closest('tr');
+
+                // Get all input elements within that <tr>
+                let inputs = parentTr.querySelectorAll('input');
+
+                // Sum up the values of all the inputs
+                let sum = 0;
                 inputs.forEach(input => {
-                    if (!input.classList.contains('grayed-out')) {
-                        input.value = "8";
-                        let parentTd = input.closest('td');
-                        parentTd.classList.add('green-bold');
-                    }
+                    // Assuming all inputs have numerical values
+                    sum += parseFloat(input.value) || 0;  // using || 0 to handle empty inputs or non-numerical values
                 });
-                inputs[0].dispatchEvent(new Event('input', { 'bubbles': true }))
-            }
-    
-            function setTableForMonthYear(year, month) {
-                let tds = document.querySelectorAll('td:not(.base-cell)');
-                tds.forEach(td => {
-                    td.parentNode.removeChild(td);
-                });
-                let ths = document.querySelectorAll('th:not(.base-cell)');
-                ths.forEach(th => {
-                    th.parentNode.removeChild(th);
-                });
-                let trs = document.querySelectorAll('.ephemeral-tr');
-                trs.forEach(tr => {
-                    tr.parentNode.removeChild(tr);
-                });
-                let columns = generateDaysColumn(year, month);
-                // Supposons que votre tableau ait un thead avec une classe 'days-header' pour les dates et 'name-days-header' pour les noms des jours
-                let daysHeader = document.querySelector('.days-header');
-                let nameDaysHeader = document.querySelector('.name-days-header');
-                daysHeader.appendChild(columns.days);
-                nameDaysHeader.appendChild(columns.names);
-    
-                generateCellsForDays()
-    
-            }
-        
-            const allOptions = [
-                    "CONGES PAYES",
-                    "CONGES SANS SOLDE",
-                    "CONGES EXCEPTIONNELS",
-                    "FERIE",
-                    "RTT SALARIE",
-                    "RTT EMPLOYEUR",
-                    "FORMATION",
-                    "MALADIE"
-                ];
-            let selectedOptions = [];
-    
-            // Exemple d'utilisation:
-            window.onload = function () {
-    
-                const table = document.getElementById('activityTable');
-    
-                let date = new Date();
-                let monthPicker = document.getElementById('monthPicker');
-    
-                // Store the current month and year for later comparison
-                let currentMonth = date.getMonth();
-                let currentYear = date.getFullYear();
-    
-                // Shift the date to the previous month
-                date.setMonth(date.getMonth() - 1);
-    
-                // Get month names. This could also be customized based on your needs.
-                let monthNames = ["January", "February", "March", "April", "May", "June",
-                    "July", "August", "September", "October", "November", "December"
-                ];
-    
-                for (let i = 0; i < 12; i++) {
-                    let month = date.getMonth();
-                    let year = date.getFullYear();
-    
-                    // Create a new option element
-                    let option = document.createElement('option');
-                    option.value = `${year}-${String(month + 1).padStart(2, '0')}`; // Format: YYYY-MM
-                    option.textContent = `${monthNames[month]} ${year}`; // Display: MonthName Year
-    
-                    // Check if this option matches the current month and year
-                    if (month === currentMonth && year === currentYear) {
-                        option.selected = true;
-                    }
-    
-                    // Append the option to the monthPicker select element
-                    monthPicker.appendChild(option);
-    
-                    // Move to the next month
-                    date.setMonth(date.getMonth() + 1);
+
+                // Get all <td> elements within that <tr>
+                let tds = parentTr.querySelectorAll('td');
+
+                // Update the value of the second <td> if it exists
+                if (tds.length > 1) {
+                    tds[1].innerText = sum;  // assuming you want to display the sum with 2 decimal places
                 }
-    
-                // Pour générer les colonnes pour octobre 2023
-                //setTableForMonthYear(year, month);
-    
-                // Attach a change event listener
-                monthPicker.addEventListener('change', function () {
-                    console.log("Selected month:", monthPicker.value);
-                    let split = monthPicker.value.split("-")
-                    setTableForMonthYear(split[0], split[1]);
-                    let titletext = document.getElementById("titletext")
-                    titletext.innerText = "Compte rendu d'activité - " + monthPicker.value
-                    resetList()
-                    // Add your custom code here
-                    // For example:
-                    // if(monthPicker.value === '2023-10') {
-                    //     console.log('October 2023 was selected!');
-                    // }
-                });
-    
-                // initDefaultTemplate()
-    
-                document.getElementById('activityTable').addEventListener('input', function (e) {
-                    if (e.target && e.target.tagName == 'INPUT') {
-                        // Get the parent <tr> of the <input>
-    
-                        let value = parseFloat(e.target.value);
-                        let parentTd = e.target.closest('td');
-    
-                        if (value > 0) {
-                            parentTd.classList.add('green-bold');
-                        } else {
-                            parentTd.classList.remove('green-bold');
-                        }
-    
-                        let parentTr = e.target.closest('tr');
-    
-                        // Get all input elements within that <tr>
-                        let inputs = parentTr.querySelectorAll('input');
-    
-                        // Sum up the values of all the inputs
-                        let sum = 0;
-                        inputs.forEach(input => {
-                            // Assuming all inputs have numerical values
-                            sum += parseFloat(input.value) || 0;  // using || 0 to handle empty inputs or non-numerical values
-                        });
-    
-                        // Get all <td> elements within that <tr>
-                        let tds = parentTr.querySelectorAll('td');
-    
-                        // Update the value of the second <td> if it exists
-                        if (tds.length > 1) {
-                            tds[1].innerText = sum.toFixed(2);  // assuming you want to display the sum with 2 decimal places
-                        }
-    
-                        nextTr = 0;
-                        if (parentTr.id === "jat") {
-                            console.log(parentTr.parentNode.lastElementChild)
-                            console.log(parentTr.parentNode.lastElementChild.previousElementSibling)
-                            nextTr = parentTr.parentNode.lastElementChild.previousElementSibling;
-                            console.log(nextTr)
-                        } else {
-                            nextTr = parentTr.parentNode.lastElementChild;
-                        }
-    
-                        // If the next <tr> exists, update its corresponding <td> value
-                        if (nextTr) {
-                            let nextTd = nextTr.querySelectorAll('td');
-                            if (nextTd.length > 1) {
-                                nextTd[1].innerText = sum.toFixed(2);  // or whatever value you want to set for the next row
-                            }
-                        }
-    
-                    }
-                });
-    
-                monthPicker.dispatchEvent(new Event('change', { 'bubbles': true }))
-    
-                function resetList() {
-    
-                    if (selectedOptions.length == 0){
-                        return true
-                    }
-    
-                    // Clear the selectedOptions array
-                    selectedOptions.length = 0;
-    
-                    // Restore the initial dropdown in the first row
-                    const firstTd = document.querySelector('.select-td');
-                    firstTd.innerHTML = `
-                        <select class="selectButton">
-                            <option value="">-- Ajouter jour non facturable --</option>
-                            <option value="JOUR CONGES PAYES">JOUR CONGES PAYES</option>
-                            <option value="JOUR CONGES SANS SOLDE">JOUR CONGES SANS SOLDE</option>
-                            <option value="JOUR CONGES EXCEPTIONNELS">JOUR CONGES EXCEPTIONNELS</option>
-                            <option value="JOUR FERIE">JOUR FERIE</option>
-                            <option value="RTT SALARIE">RTT SALARIE</option>
-                            <option value="RTT EMPLOYEUR">RTT EMPLOYEUR</option>
-                            <option value="JOUR FORMATION">JOUR FORMATION</option>
-                            <option value="JOUR MALADIE">JOUR MALADIE</option>
-                        </select>
-                    `;
+
+                nextTr = 0;
+                if (parentTr.id === "jat") {
+                    nextTr = parentTr.parentNode.lastElementChild.previousElementSibling;
+                } else {
+                    nextTr = parentTr.parentNode.lastElementChild;
                 }
-    
-                // Example of how to use the function:
-                // resetList();
-    
-                table.addEventListener('change', function (e) {
-                    if (e.target && e.target.classList.contains('selectButton')) {
-                        const selectedValue = e.target.value;
-                        const currentTd = e.target.closest('td');
-                        const currentTr = e.target.closest('tr');
-    
-                        // Add the selected value to the array of selected options
-                        selectedOptions.push(selectedValue);
-    
-                        // Replace the current td's content with the selected value
-                        currentTd.textContent = selectedValue;
-                        currentTd.classList.remove("base-cell")
-                        currentTd.classList.remove("select-td")
-                        currentTr.classList.add("ephemeral-tr")
-    
-                        // Create a new tr and td, and add the fresh select button
-                        const newTr = document.createElement('tr');
-                        const newTd = document.createElement('td');
-                        const newSelect = document.createElement('select');
-                        newSelect.className = "selectButton";
-                        newTd.classList.add("select-td")
-                        newTd.classList.add("base-cell")
-    
-                        // Add default option
-                        const defaultOption = document.createElement('option');
-                        defaultOption.value = "";
-                        defaultOption.textContent = "-- Ajouter jour non facturable --";
-                        newSelect.appendChild(defaultOption);
-    
-                        // Add only options that haven't been selected yet
-                        allOptions.forEach(option => {
-                            if (!selectedOptions.includes(option)) {
-                                const opt = document.createElement('option');
-                                opt.value = option;
-                                opt.textContent = option;
-                                newSelect.appendChild(opt);
-                            }
-                        });
-    
-                        newTd.appendChild(newSelect);
-                        newTr.appendChild(newTd);
-    
-                        // Insert the new tr just below the current tr
-                        currentTr.insertAdjacentElement('afterend', newTr);
-                        generateCellsForDays([currentTr])
+
+                // If the next <tr> exists, update its corresponding <td> value
+                if (nextTr) {
+                    let nextTd = nextTr.querySelectorAll('td');
+                    if (nextTd.length > 1) {
+                        nextTd[1].innerText = sum;  // or whatever value you want to set for the next row
+                    }
+                }
+
+            }
+        });
+
+        monthPicker.dispatchEvent(new Event('change', { 'bubbles': true }))
+
+
+        // Example of how to use the function:
+        // resetList();
+
+        table.addEventListener('change', function (e) {
+            if (e.target && e.target.classList.contains('selectButton')) {
+                console.log("NOOON")
+                const selectedValue = e.target.value;
+                const currentTd = e.target.closest('td');
+                const currentTr = e.target.closest('tr');
+
+                // Add the selected value to the array of selected options
+                selectedOptions.push(selectedValue);
+
+                // Replace the current td's content with the selected value
+                currentTd.textContent = selectedValue;
+                currentTd.classList.remove("base-cell")
+                currentTd.classList.remove("select-td")
+                currentTr.classList.add("ephemeral-tr")
+
+                // Create a new tr and td, and add the fresh select button
+                const newTr = document.createElement('tr');
+                const newTd = document.createElement('td');
+                const newSelect = document.createElement('select');
+                newSelect.className = "selectButton";
+                newSelect.id = "selectButton"
+                newTd.classList.add("select-td")
+                newTd.classList.add("base-cell")
+                newTd.classList.add("first-col")
+
+                // Add default option
+                const defaultOption = document.createElement('option');
+                defaultOption.value = "";
+                defaultOption.textContent = "Ajouter jour non facturable";
+                newSelect.appendChild(defaultOption);
+
+                // Add only options that haven't been selected yet
+                allOptions.forEach(option => {
+                    if (!selectedOptions.includes(option)) {
+                        const opt = document.createElement('option');
+                        opt.value = option;
+                        opt.textContent = option;
+                        newSelect.appendChild(opt);
                     }
                 });
-            };
-    
-            function generateEmailTable() {
-                // Clone the activityTable
-                const originalTable = document.getElementById('activityTable');
-                const clonedTable = originalTable.cloneNode(true);
-    
-                // Convert input values to text
-                const inputElements = clonedTable.querySelectorAll('input');
-                inputElements.forEach(input => {
-                    const parentCell = input.parentElement;
-                    parentCell.textContent = input.value;
-                });
-    
-                // Remove the td that contains the select element
-                const selectCells = clonedTable.querySelectorAll('td > select');
-                selectCells.forEach(select => {
-                    const parentCell = select.parentElement;
-                    parentCell.remove();
-                });
-    
-                return clonedTable.outerHTML;
+
+                newTd.appendChild(newSelect);
+                newTr.appendChild(newTd);
+
+                // Insert the new tr just below the current tr
+                currentTr.insertAdjacentElement('afterend', newTr);
+                generateCellsForDays([currentTr])
             }
-    
-            function composeEmail() {
-                let emailContent = '<html><body>';
-    
-                // Extract styles from the page
-                const styles = Array.from(document.querySelectorAll('head style')).map(styleElem => styleElem.outerHTML).join('');
-                emailContent += styles;
-    
-                emailContent += '</head><body>';
-    
-                emailContent += '<h1>Timesheet Information:</h1>';
-                emailContent += generateEmailTable();
-    
-                const collaborateurInputs = document.querySelectorAll("fieldset[name='collaborateur'] input");
-                emailContent += '<h2>COLLABORATEUR:</h2>';
-                collaborateurInputs.forEach(input => {
-                    if (input.type !== "file") {
-                        emailContent += `<p><strong>${input.name}:</strong> ${input.value}</p>`;
-                    } else if (input.files && input.files[0]) {
-                        emailContent += `<p><strong>${input.name}:</strong> ${input.files[0].name}</p>`;
-                    }
-                });
-    
-                const clientInputs = document.querySelectorAll("fieldset[name='client'] input");
-                emailContent += '<h2>CLIENT:</h2>';
-                clientInputs.forEach(input => {
-                    if (input.type !== "file") {
-                        emailContent += `<p><strong>${input.name}:</strong> ${input.value}</p>`;
-                    } else if (input.files && input.files[0]) {
-                        emailContent += `<p><strong>${input.name}:</strong> ${input.files[0].name}</p>`;
-                    }
-                });
-    
-                emailContent += '</body></html>';
-    
-                return emailContent;
+        });
+    };
+
+    function generateEmailTable() {
+        // Clone the activityTable
+        const originalTable = document.getElementById('activityTable');
+        const clonedTable = originalTable.cloneNode(true);
+
+        // Convert input values to text
+        const inputElements = clonedTable.querySelectorAll('input');
+        inputElements.forEach(input => {
+            const parentCell = input.parentElement;
+            parentCell.textContent = input.value;
+        });
+
+        // Remove the td that contains the select element
+        const selectCells = clonedTable.querySelectorAll('td > select');
+        selectCells.forEach(select => {
+            const parentCell = select.parentElement;
+            parentCell.remove();
+        });
+
+        return clonedTable.outerHTML;
+    }
+
+    function composeEmail() {
+        let emailContent = '<html><body>';
+
+        // Extract styles from the page
+        const styles = Array.from(document.querySelectorAll('head style')).map(styleElem => styleElem.outerHTML).join('');
+        emailContent += styles;
+
+        emailContent += '</head><body>';
+
+        emailContent += '<h1>Timesheet Information:</h1>';
+        emailContent += generateEmailTable();
+
+        const collaborateurInputs = document.querySelectorAll("fieldset[name='collaborateur'] input");
+        emailContent += '<h2>COLLABORATEUR:</h2>';
+        collaborateurInputs.forEach(input => {
+            if (input.type !== "file") {
+                emailContent += `<p><strong>${input.name}:</strong> ${input.value}</p>`;
+            } else if (input.files && input.files[0]) {
+                emailContent += `<p><strong>${input.name}:</strong> ${input.files[0].name}</p>`;
             }
-    
-            function sendEmail() {
-                const subject = "Timesheet Information";
-                const emailBody = composeEmail();
-    
-                console.log(emailBody)
-                html2pdf(emailBody)
-    
-                // Create mailto link
-                const mailtoLink = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(emailBody);
-    
-                // Open mail app
-                window.location.href = mailtoLink;
+        });
+
+        const clientInputs = document.querySelectorAll("fieldset[name='client'] input");
+        emailContent += '<h2>CLIENT:</h2>';
+        clientInputs.forEach(input => {
+            if (input.type !== "file") {
+                emailContent += `<p><strong>${input.name}:</strong> ${input.value}</p>`;
+            } else if (input.files && input.files[0]) {
+                emailContent += `<p><strong>${input.name}:</strong> ${input.files[0].name}</p>`;
             }
-        </script>
-    
+        });
+
+        emailContent += '</body></html>';
+
+        return emailContent;
+    }
+
+    function sendEmail() {
+        const subject = "Timesheet Information";
+        const emailBody = composeEmail();
+
+        console.log(emailBody)
+        html2pdf(emailBody)
+
+        // Create mailto link
+        const mailtoLink = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(emailBody);
+
+        // Open mail app
+        window.location.href = mailtoLink;
+    }
+</script>
+
+<div id="cram-body">
+
+    <div style="display: flex;
+    justify-content: space-between;">
         <h2 id="titletext">Compte rendu d'activité - Octobre 2023</h2>
-    
-    
-        <fieldset name="options">
-            <legend>OPTIONS</legend>
-            <label for="monthPicker">Select a month:</label>
+        <div id="top-container">
+            <label style="margin-right: 5px;" for="monthPicker">Sélectionner un mois :</label>
             <select id="monthPicker"></select>
-    
-            <button id="myButton" onclick="initDefaultTemplate()">Apply default template</button>
-            <button onclick="initDefaultTemplate()">Export template</button>
-            <button onclick="initDefaultTemplate()">Import template</button>
-        </fieldset>
-        <BR>
-    
-        <div id="infos">
-            <fieldset name="collaborateur">
-                <legend>COLLABORATEUR</legend>
-    
-                <label for="collabNom">Nom:</label>
-                <input type="text" id="collabNom" name="collabNom" required>
-                <br>
-    
-                <label for="collabPrenom">Prenom:</label>
-                <input type="text" id="collabPrenom" name="collabPrenom" required>
-                <br>
-    
-                <label for="collabTel">Telephone (optionnel):</label>
-                <input type="tel" id="collabTel" name="collabTel">
-                <br>
-    
-                <label for="collabSignature">Signature (image):</label>
-                <input type="file" id="collabSignature" name="collabSignature" accept="image/*">
-            </fieldset>
-    
-            <br>
-    
-            <fieldset name="client">
-                <legend>CLIENT</legend>
-    
-                <label for="clientNom">Nom du client:</label>
-                <input type="text" id="clientNom" name="clientNom" required>
-                <br>
-    
-                <label for="clientSignature">Signature (image):</label>
-                <input type="file" id="clientSignature" name="clientSignature" accept="image/*">
-            </fieldset>
-    
-            <br>
         </div>
-        <BR>
-    
-            <div class="table-wrapper">
-        <table id="activityTable">
-            <thead>
-            <!-- Header du tableau avec les jours du mois -->
-                <tr class="name-days-header">
-                    <th class="base-cell sticky-col first-col"></th>
-                    <th class="base-cell sticky-col second-col"></th>
-                </tr>
-                <tr class="days-header">
-                    <th class="base-cell sticky-col first-col"></th>
-                    <th class="base-cell sticky-col second-col"></th>
-                </tr>
-            </thead>
-            <tbody>
-    
-            <!-- Section Facturable -->
-            <!-- <tr>
+    </div>
+
+    <!--  -->
+
+    <!-- <h3 id="titreMoisAnnees"></h3> -->
+
+    <fieldset style="padding-top: 0px;padding-right: 0px;position:relative;">
+        <!-- <span id="titreMoisAnnees" style="font-family: monospace;font-weight: bold;"></span> -->
+        <div class="table-wrapper">
+            <table id="activityTable">
+                <thead>
+                    <!-- Header du tableau avec les jours du mois -->
+                    <tr class="name-days-header">
+                        <th class="base-cell sticky-col first-col"></th>
+                        <th class="base-cell sticky-col second-col"></th>
+                    </tr>
+                    <tr class="days-header">
+                        <th class="base-cell sticky-col first-col"></th>
+                        <th class="base-cell sticky-col second-col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!-- Section Facturable -->
+                    <!-- <tr>
                 <td class="base-cell bold-cell sticky-col first-col border-none">FACTURABLE / ACTIVITE NORMALE</td>
                 <td class="base-cell sticky-col second-col border-none"></td>
             </tr> -->
-    
-            <tr id="jat">
-                <td class="base-cell sticky-col first-col" style="border-right: none;">ASSISTANCE TECHNIQUE</td>
-            </tr>
-    
-            <!-- Section Non Facturable -->
-            <!-- <tr>
+
+                    <tr id="jat">
+                        <td class="base-cell sticky-col first-col" style="border-right: none;">ASSISTANCE TECHNIQUE</td>
+                    </tr>
+
+                    <!-- Section Non Facturable -->
+                    <!-- <tr>
                 <td class="base-cell bold-cell sticky-col first-col border-none" colspan=1>NON FACTURABLE</td>
                 <td class="base-cell sticky-col second-col border-none"></td>
             </tr> -->
-            <tr>
-                <td class="base-cell select-td sticky-col first-col">
-                    <select class="selectButton">
-                        <option value="">-- Ajouter jour non facturable --</option>
-                        <option value="CONGES PAYES">CONGES PAYES</option>
-                        <option value="CONGES SANS SOLDE">CONGES SANS SOLDE</option>
-                        <option value="CONGES EXCEPTIONNELS">CONGES EXCEPTIONNELS</option>
-                        <option value="FERIE">FERIE</option>
-                        <option value="RTT SALARIE">RTT SALARIE</option>
-                        <option value="RTT EMPLOYEUR">RTT EMPLOYEUR</option>
-                        <option value="FORMATION">FORMATION</option>
-                        <option value="MALADIE">MALADIE</option>
-                    </select>
-                </td>
-                <td class="sticky-col second-col border-none"></td>
-            </tr>
-            <!-- <tr>
+                    <tr>
+                        <td class="base-cell select-td sticky-col first-col">
+                            <select id="selectButton" class="selectButton">
+                                <option value="">Ajouter jour non facturable</option>
+                                <option value="CONGES PAYES">CONGES PAYES</option>
+                                <option value="CONGES SANS SOLDE">CONGES SANS SOLDE</option>
+                                <option value="CONGES EXCEPTIONNELS">CONGES EXCEPTIONNELS</option>
+                                <option value="FERIE">FERIE</option>
+                                <option value="RTT SALARIE">RTT SALARIE</option>
+                                <option value="RTT EMPLOYEUR">RTT EMPLOYEUR</option>
+                                <option value="FORMATION">FORMATION</option>
+                                <option value="MALADIE">MALADIE</option>
+                            </select>
+                        </td>
+                        <td class="sticky-col second-col border-none"></td>
+                    </tr>
+                    <!-- <tr>
                 <td class="base-cell bold-cell">JOUR CONGES SANS SOLDE</td>
             </tr>
             <tr>
@@ -724,21 +976,67 @@ input[type=number]::-webkit-outer-spin-button {
             <tr>
                 <td class="base-cell bold-cell">JOUR MALADIE</td>
             </tr> -->
-            <tr class="border-bottom">
-                <td class="base-cell bold-cell green-cell sticky-col first-col" style="border-left: none;">TTL FACTURABLES</td>
-            </tr>
-            <tr>
-                <td class="base-cell bold-cell sticky-col first-col">TTL NON FACTURABLES</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    
-        <fieldset>
-            <legend>OUTPUT</legend>
+                    <tr class="border-bottom">
+                        <td class="base-cell bold-cell green-cell sticky-col first-col" style="border-left: none;">TTL FACTURABLES</td>
+                    </tr>
+                    <tr>
+                        <td class="base-cell bold-cell sticky-col first-col">TTL NON FACTURABLES</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="position: absolute;
+        right: 10px;
+        bottom: 10px;">
+            <button id="myButton" onclick="initDefaultTemplate()">Appliquer template par défaut</button>
+            <button onclick="initDefaultTemplate()">Export template</button>
+            <button onclick="initDefaultTemplate()">Import template</button>
+        </div>
+    </fieldset>
+    <br>
+
+    <div id="infos">
+        <fieldset name="collaborateur">
+            <legend>Collaborateur</legend>
+
+            <label for="collabNom">Nom:</label>
+            <input type="text" id="collabNom" name="collabNom" required>
+            <br>
+
+            <label for="collabPrenom">Prenom:</label>
+            <input type="text" id="collabPrenom" name="collabPrenom" required>
+            <br>
+
+            <label for="collabTel">Telephone (optionnel):</label>
+            <input type="tel" id="collabTel" name="collabTel">
+            <br>
+
+            <label for="collabSignature">Signature (image):</label>
+            <input type="file" id="collabSignature" name="collabSignature" accept="image/*">
+        </fieldset>
+        <fieldset name="client">
+            <legend>Client</legend>
+
+            <label for="clientNom">Nom du client:</label>
+            <input type="text" id="clientNom" name="clientNom" required>
+            <br>
+
+            <label for="clientSignature">Signature (image):</label>
+            <input type="file" id="clientSignature" name="clientSignature" accept="image/*">
+        </fieldset>
+
+        <fieldset style="
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    ">
+            <legend>Export</legend>
     
             <button onclick="sendEmail()">Générer email</button>
             <button onclick="initDefaultTemplate()">Générer pdf</button>
             <button onclick="initDefaultTemplate()">Générer csv</button>
         </fieldset>
-    
+        <br>
+    </div>
+
+</div>
