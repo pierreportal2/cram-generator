@@ -1,7 +1,7 @@
+<html>
 <style>
-
 /* Title */
-h2 {
+#cram-body h2 {
     font-size: 3em;
     text-align: center;
     color: #333;
@@ -12,7 +12,7 @@ h2 {
 #top-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
 
 #top-container label,
@@ -21,7 +21,7 @@ h2 {
 }
 
 /* Fieldset */
-fieldset {
+#cram-body fieldset {
     background-color: #f9f9f9;
     border: 2px solid #e1e1e1;
     border-radius: 10px;
@@ -30,14 +30,15 @@ fieldset {
 }
 
 /* Legend */
-legend {
+#cram-body legend {
     font-size: 1.5em;
     color: #333;
     font-weight: bold;
 }
 
 /* Input Text and Select Dropdown */
-input[type="text"],input[type="tel"],
+#cram-body input[type="text"],
+#cram-body input[type="tel"],
 select {
     padding: 10px;
     border: 1px solid #ccc;
@@ -50,9 +51,8 @@ select {
     margin-bottom: 0;
 }
 
-
 /* Buttons */
-button {
+#cram-body button {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -67,243 +67,152 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
+#cram-body button:hover {
     background-color: transparent;
     color: #4CAF50;
 }
 
-        #titletext{
-            font-size: 33px;
+#titletext {
+    font-size: 33px;
     font-family: sans-serif;
     font-weight: bold;
-        }
+}
 
-
-    @media (max-width: 1165px) {
-        .name-days-header{
-            display: none;
-        }
-        input[type="number"]{
-            /* font-size: 8.7px; */
-        }
+@media (max-width: 1165px) {
+    .name-days-header {
+        display: none;
     }
-
-    /* #titreMoisAnnees {
-        
-    left: 38px;
-    position: absolute;
-
-    } */
-
-    #selectButton{
-        margin-bottom: 5px;
-        margin-top: 5pw;
-        font-family: monospace;
-        font-size: 11.7px
+    #cram-body input[type="number"] {
+        /* font-size: 8.7px; */
     }
+}
 
-    #cram-body {
-        font-family: sans-serif;
-        min-width: 904px;
-        margin-top: 30px;
-    }
+/* Removed the commented-out styles */
 
-    input[type="number"] {
-        -webkit-appearance: textfield;
-        -moz-appearance: textfield;
-        appearance: textfield;
-        /* font-size: 11.7px; */
-    }
+#selectButton {
+    margin-bottom: 5px;
+    margin-top: 5pw;
+    font-family: monospace;
+    font-size: 11.7px
+}
 
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-    }
-    .time-input {
-        padding: 0;
-    }
+#cram-body {
+    font-family: sans-serif;
+    min-width: 904px;
+    margin-top: 30px;
+}
 
-    input {
-        font-family: monospace;
-    }
+#cram-body input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
 
-    table {
-        font-family: monospace;
-        font-style: monospace;
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.9em;
-    }
+#cram-body input[type=number]::-webkit-inner-spin-button,
+#cram-body input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
 
-    th,
-    td {
-        /* border: 1px solid #d3d3d3; */
-        text-align: center;
-        transition: all 0.3s;
-        /* smooth hover effect */
-    }
+.time-input {
+    padding: 0;
+}
 
-    .second-col {
-        min-width: 42px
-    }
+#cram-body input {
+    font-family: monospace;
+}
 
+#cram-body table {
+    font-family: monospace;
+    font-style: monospace;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
 
-    /* Hover effect for table rows */
-    tr:hover {
-        background-color: #f5f5f5;
-    }
+.second-col {
+    min-width: 42px
+}
 
-    /* Header styles */
-    th {
-        background-color: #f2f2f2;
-        color: #333;
-    }
+#cram-body tr:hover {
+    background-color: #f5f5f5;
+}
 
-    th.first-col, th.second-col {
-        background-color: transparent;
-    }
+/* Header styles */
+#cram-body th {
+    background-color: #f2f2f2;
+    color: #333;
+}
 
-    /* For vertical text */
-    .vertical-text {
-        transform: rotate(270deg);
-        white-space: nowrap;
-        display: inline-block;
-    }
+#cram-body th.first-col, #cram-body th.second-col {
+    background-color: transparent;
+}
 
-    .bold-cell {
-        font-weight: bold;
-    }
+.vertical-text {
+    transform: rotate(270deg);
+    white-space: nowrap;
+    display: inline-block;
+}
 
-    /* .green-cell {
-        color: green;
-    } */
+.bold-cell {
+    font-weight: bold;
+}
 
-    .green-bold {
-        background-color: #4CAF50;
-        /* Adjusted to a shade of green that's pleasing to the eye */
-        color: white;
-        font-weight: bold;
-    }
+.green-bold {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
 
-    .full-width-input {
-        width: 100%;
-        height: 100%;
-        border: none;
-        padding: 0 !important;
-        color: black !important;
-        margin: 0;
-        box-sizing: border-box;
-        background-color: #f9f9f9;
-        /* Light grey to differentiate input fields */
-        text-align: center;
-        /* Centering text in input fields */
-    }
+.full-width-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0 !important;
+    color: black !important;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    text-align: center;
+}
 
-    .grayed-out {
-        background-color: #d3d3d3;
-    }
+.grayed-out {
+    background-color: #d3d3d3;
+}
 
-    .ferie-td {
-        background-color: pink;
-    }
+.ferie-td {
+    background-color: pink;
+}
 
-    .input-td {
-        padding: 0;
-        /* padding-left: 5px; */
-    }
+.input-td {
+    padding: 0;
+}
 
-    #infos {
-        display: flex;
-        justify-content: space-evenly;
-    }
+#infos {
+    display: flex;
+    justify-content: space-evenly;
+}
 
-    fieldset {
-        /* flex: 1; */
-        padding: 15px;
-        border-radius: 5px;
-        border: 1px solid #d3d3d3;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        /* Adding a soft shadow for depth */
-    }
+#cram-body fieldset {
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-    tr.border-bottom td {
-        /* border-bottom: 1px solid black; */
-    }
+.first-col {
+    max-width: 176px;
+}
 
-    .first-col{    max-width: 176px;}
+.border-none {
+    border: none;
+}
 
-
-
-    /* .table-wrapper {
-        position: relative;
-        overflow: auto;
-        border: 1px solid black;
-        white-space: nowrap;
-    } */
-
-    /* 
-    .sticky-col {
-      position: sticky;
-      position: -webkit-sticky;    
-      background-color: white;
-    }
-    
-    .first-col {
-      width: 300px;
-      min-width: 300px;
-      max-width: 300px;
-      left: 0px;    
-    }
-    
-    .second-col {
-      width: 150px;
-      min-width: 150px;
-      max-width: 150px;
-      left: 334px;    
-    } */
-
-    /* .table-wrapper {
-      width: 100%;
-      height: 150px;
-      overflow: auto;
-    } */
-
-    .border-none {
-        border: none;
-    }
-
-    table {
-        width: 100%;
-        text-align: center;
-        border-collapse: separate;
-        /* Don't collapse */
-        border-spacing: 0;
-    }
-
-    table th {
-        /* Apply both top and bottom borders to the <th> */
-        /* border-top: 2px solid;
-      border-bottom: 2px solid;
-      border-right: 2px solid; */
-    }
-
-    table td {
-        /* For cells, apply the border to one of each side only (right but not left, bottom but not top) */
-        /* border-bottom: 2px solid;
-      border-right: 2px solid; */
-    }
-
-    table th:first-child,
-    table td:first-child {
-        /* Apply a left border on the first <td> or <th> in a row */
-        /* border-left: 2px solid; */
-    }
-
-    /* table thead th {
-      position: sticky;
-      top: 0;
-      background-color: #edecec;
-    } */
+#cram-body table {
+    width: 100%;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
+}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
     integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
@@ -610,7 +519,6 @@ if (!hFeries) {
         resetList(hFeries=h)
 
     }
-
 
     // Exemple d'utilisation:
     window.onload = function () {
@@ -1040,3 +948,5 @@ if (!hFeries) {
     </div>
 
 </div>
+    
+</html>
