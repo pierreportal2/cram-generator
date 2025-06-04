@@ -806,6 +806,55 @@ if (!hFeries) {
         // Open mail app
         window.location.href = mailtoLink;
     }
+
+    function exportTemplate() {
+        const inputs = document.querySelectorAll('#jat td input');
+        const values = Array.from(inputs).map(i => i.value);
+        const blob = new Blob([JSON.stringify(values)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'template.json';
+        link.click();
+        URL.revokeObjectURL(url);
+    }
+
+    function importTemplate() {
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'application/json';
+        fileInput.addEventListener('change', () => {
+            const file = fileInput.files[0];
+            if (!file) {
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = () => {
+                try {
+                    const values = JSON.parse(reader.result);
+                    const inputs = document.querySelectorAll('#jat td input');
+                    inputs.forEach((input, idx) => {
+                        if (values[idx] !== undefined) {
+                            input.value = values[idx];
+                            const td = input.closest('td');
+                            if (parseFloat(values[idx]) > 0) {
+                                td.classList.add('green-bold');
+                            } else {
+                                td.classList.remove('green-bold');
+                            }
+                        }
+                    });
+                    if (inputs[0]) {
+                        inputs[0].dispatchEvent(new Event('input', { bubbles: true }));
+                    }
+                } catch (e) {
+                    alert('Invalid template file');
+                }
+            };
+            reader.readAsText(file);
+        });
+        fileInput.click();
+    }
 </script>
 
 <div id="cram-body">
@@ -905,8 +954,8 @@ if (!hFeries) {
         right: 10px;
         bottom: 10px;">
             <button id="myButton" onclick="initDefaultTemplate()">Appliquer template par défaut</button>
-            <button onclick="initDefaultTemplate()">Export template</button>
-            <button onclick="initDefaultTemplate()">Import template</button>
+            <button onclick="exportTemplate()">Export template</button>
+            <button onclick="importTemplate()">Import template</button>
         </div>
     </fieldset>
     <br>
