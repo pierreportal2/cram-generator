@@ -789,8 +789,16 @@ if (!hFeries) {
         const subject = "Timesheet Information";
         const emailBody = composeEmail();
 
-        console.log(emailBody)
-        html2pdf(emailBody)
+        console.log(emailBody);
+
+        // Convert the HTML email body to PDF
+        const hiddenDiv = document.createElement('div');
+        hiddenDiv.style.display = 'none';
+        hiddenDiv.innerHTML = emailBody;
+        document.body.appendChild(hiddenDiv);
+        html2pdf().from(hiddenDiv).save().then(() => {
+            document.body.removeChild(hiddenDiv);
+        });
 
         // Create mailto link
         const mailtoLink = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(emailBody);
